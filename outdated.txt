@@ -1,0 +1,187 @@
+Fetching https://github.com/awslabs/amazon-kinesis-client-ruby
+Fetching git@github.com:mdsol/pagem.git
+Fetching git@github.com:mdsol/rubycas-client.git
+Fetching git@github.com:mdsol/acts_as_auditable.git
+Fetching git@github.com:mdsol/activity-tracker-js.git
+Fetching git@github.com:mdsol/api_pagination.git
+Fetching git@github.com:mdsol/carmen.git
+Fetching git@github.com:mdsol/crichton.git
+Fetching git@github.com:mdsol/dice_bag.git
+Fetching git@github.com:mdsol/dice_bag-mdsol.git
+Fetching git@github.com:mdsol/hollywood.git
+Fetching git@github.com:mdsol/imedidata_client.git
+Fetching git@github.com:mdsol/maudit_client.git
+Fetching git@github.com:mdsol/mdsol-tools.git
+Fetching git@github.com:mdsol/representors.git
+Fetching git@github.com:mdsol/jquery-multiselect-rails.git
+Fetching git@github.com:mdsol/eureka-client.git
+Fetching git@github.com:mdsol/eureka_tools.git
+Fetching git@github.com:mdsol/sandman-rails.git
+Fetching git@github.com:mdsol/aranea.git
+Fetching git@github.com:mdsol/archon-client.git
+Fetching git@github.com:mdsol/astinus.git
+Fetching git@github.com:mdsol/impersonation_middleware.git
+Fetching git@github.com:mdsol/mdsol-farscape-plugins.git
+Fetching git@github.com:mdsol/rack-app_status.git
+Fetching git@github.com:flyerhzm/bullet
+Fetching git@github.com:mdsol/probity.git
+Fetching git@github.com:mdsol/hyper_guy.git
+Fetching git@github.com:mdsol/shamus.git
+Fetching gem metadata from https://rubygems.org/..............
+Fetching gem metadata from https://rubygems.org/..
+Resolving dependencies..........................................................................
+
+Outdated gems included in the bundle:
+  * actionmailer (newest 5.1.5, installed 4.1.16)
+  * actionpack (newest 5.1.5, installed 4.1.16)
+  * actionview (newest 5.1.5, installed 4.1.16)
+  * active_model_serializers (newest 0.10.7, installed 0.9.3, requested ~> 0.9) in groups "default"
+  * active_record_query_trace (newest 1.5.4, installed 1.4, requested ~> 1.4) in groups "test, development"
+  * activemodel (newest 5.1.5, installed 4.1.16)
+  * activerecord (newest 5.1.5, installed 4.1.16)
+  * activerecord-import (newest 0.22.0, installed 0.15.0, requested ~> 0.15) in groups "default"
+  * activerecord-session_store (newest 1.1.1, installed 1.0.0, requested ~> 1.0.0) in groups "default"
+  * activesupport (newest 5.1.5, installed 4.1.16)
+  * addressable (newest 2.5.2, installed 2.3.8)
+  * akami (newest 1.3.1, installed 1.2.2)
+  * american_date (newest 1.1.1, installed 1.0.0, requested = 1.0.0) in groups "default"
+  * amoeba (newest 3.1.0, installed 3.0.0, requested ~> 3.0) in groups "default"
+  * annotate (newest 2.7.2, installed 2.4.0, requested = 2.4.0) in groups "test, development"
+  * arel (newest 9.0.0, installed 5.0.1.20140414130214)
+  * awesome_print (newest 1.8.0, installed 1.7.0) in groups "test, development"
+  * aws-sdk (newest 3.0.1, installed 1.65.0, requested ~> 1.9) in groups "default"
+  * aws-sdk-core (newest 3.17.1, installed 2.9.12)
+  * aws-sdk-rails (newest 2.0.1, installed 1.0.1, requested ~> 1.0) in groups "default"
+  * aws-sdk-resources (newest 3.12.0, installed 2.9.12)
+  * aws-sdk-v1 (newest 1.67.0, installed 1.65.0)
+  * aws-sigv4 (newest 1.0.2, installed 1.0.0)
+  * brakeman (newest 4.2.1, installed 3.3.3, requested ~> 3.1) in groups "test"
+  * builder (newest 3.2.3, installed 3.2.2)
+  * byebug (newest 10.0.1, installed 5.0.0)
+  * capybara (newest 2.18.0, installed 1.1.4, requested ~> 1.1) in groups "test, development"
+  * childprocess (newest 0.9.0, installed 0.6.3)
+  * client_side_validations (newest 11.1.1, installed 4.2.5, requested ~> 4.2) in groups "default"
+  * climate_control (newest 0.2.0, installed 0.0.3)
+  * cocaine (newest 0.6.0, installed 0.5.8)
+  * coderay (newest 1.1.2, installed 1.1.1)
+  * colorize (newest 0.8.1, installed 0.6.0)
+  * combined_time_select (newest 2.0.0, installed 1.0.1, requested ~> 1.0) in groups "default"
+  * concurrent-ruby (newest 1.0.5, installed 1.0.2)
+  * cucumber (newest 3.1.0, installed 1.3.20, requested ~> 1.3) in groups "test, development"
+  * cucumber-rails (newest 1.5.0, installed 1.4.3, requested ~> 1.4.3) in groups "test, development"
+  * curb (newest 0.9.4, installed 0.9.3)
+  * daemons (newest 1.2.6, installed 1.2.3, requested ~> 1.2.3) in groups "default"
+  * database_cleaner (newest 1.6.2, installed 0.9.1, requested ~> 0.7) in groups "test, development"
+  * delayed_job (newest 4.1.4, installed 4.1.2, requested ~> 4.1) in groups "default"
+  * delayed_job_active_record (newest 4.1.2, installed 4.1.1, requested ~> 4.1) in groups "default"
+  * dice_bag (newest 1.2.1, installed 0.9.0 508ea80) in groups "default"
+  * diffy (newest 3.2.0, installed 3.0.7)
+  * docile (newest 1.3.0, installed 1.1.5)
+  * draper (newest 3.0.1, installed 2.1.0, requested ~> 2.1) in groups "default"
+  * email_spec (newest 2.1.1, installed 1.4.0, requested = 1.4.0) in groups "test, development"
+  * eventmachine (newest 1.2.5, installed 1.2.0.1)
+  * factory_girl (newest 4.9.0, installed 4.7.0)
+  * factory_girl_rails (newest 4.9.0, installed 4.7.0, requested ~> 4.7) in groups "test, development"
+  * faraday (newest 0.14.0, installed 0.9.2, requested ~> 0.9.0) in groups "default"
+  * faraday_middleware (newest 0.12.2, installed 0.10.0)
+  * fedex (newest 3.10.11, installed 3.10.1, requested ~> 3.9) in groups "default"
+  * ffi (newest 1.9.23, installed 1.9.18)
+  * font-awesome-rails (newest 4.7.0.3, installed 4.6.3.1) in groups "default"
+  * gherkin (newest 5.0.0, installed 2.12.2)
+  * gmail (newest 0.6.0, installed 0.5.0, requested = 0.5.0) in groups "test, development"
+  * gyoku (newest 1.3.1, installed 1.1.1)
+  * haml (newest 5.0.4, installed 4.0.7, requested ~> 4.0) in groups "default"
+  * httparty (newest 0.16.1, installed 0.14.0)
+  * httpi (newest 2.4.3, installed 2.1.1)
+  * i18n (newest 1.0.0, installed 0.6.11)
+  * iconv (newest 1.0.5, installed 1.0.4, requested ~> 1.0) in groups "default"
+  * imedidata_client (newest 1.9.1 92a9483, installed 1.9.1 6c76299) in groups "default"
+  * jquery-rails (newest 4.3.1, installed 3.1.4)
+  * jquery-ui-rails (newest 6.0.1, installed 5.0.5) in groups "default"
+  * js_regex (newest 2.2.1, installed 1.0.17)
+  * json (newest 2.1.0, installed 1.8.3, requested ~> 1.8) in groups "default"
+  * json-schema (newest 2.8.0, installed 1.2.1)
+  * jwt (newest 2.1.0, installed 1.5.6)
+  * kaminari (newest 1.1.1, installed 0.17.0)
+  * kapnismology (newest 2.3.2, installed 2.2.1)
+  * libv8 (newest 6.3.292.48.1, installed 3.16.14.15)
+  * lorekeeper (newest 1.6.2, installed 1.6.0)
+  * mail (newest 2.7.0, installed 2.6.4)
+  * mauth-client (newest 4.0.3, installed 4.0.1, requested ~> 4.0) in groups "default"
+  * method_source (newest 0.9.0, installed 0.8.2)
+  * mime-types (newest 3.1, installed 1.25.1)
+  * mimemagic (newest 0.3.2, installed 0.3.0)
+  * mini_portile2 (newest 2.3.0, installed 2.1.0)
+  * minitest (newest 5.11.3, installed 5.9.0)
+  * multi_json (newest 1.13.1, installed 1.12.1)
+  * multi_xml (newest 0.6.0, installed 0.5.5)
+  * mysql2 (newest 0.5.0, installed 0.3.21, requested ~> 0.3.21) in groups "default"
+  * net-http-persistent (newest 3.0.0, installed 2.9.4, requested ~> 2.9.4) in groups "default"
+  * newrelic_rpm (newest 5.0.0.342, installed 3.16.3.323, requested ~> 3.11) in groups "default"
+  * nokogiri (newest 1.8.2, installed 1.7.1)
+  * nori (newest 2.6.0, installed 2.3.0)
+  * oauth (newest 0.5.4, installed 0.5.1)
+  * oj (newest 3.5.0, installed 2.17.4)
+  * paperclip (newest 6.0.0, installed 4.3.6, requested = 4.3.6) in groups "default"
+  * paperclip-aws (newest 1.6.8, installed 1.6.6, requested = 1.6.6) in groups "default"
+  * parallel (newest 1.12.1, installed 1.9.0)
+  * parallel_tests (newest 2.21.3, installed 1.6.2, requested ~> 1.6.2) in groups "test, development"
+  * paranoia (newest 2.4.0, installed 2.3.1, requested ~> 2.2) in groups "default"
+  * passenger (newest 5.2.1, installed 4.0.60, requested ~> 4.0) in groups "default"
+  * pickle (newest 0.5.4, installed 0.5.1, requested = 0.5.1) in groups "test, development"
+  * power_assert (newest 1.1.1, installed 0.3.1)
+  * pry (newest 0.11.3, installed 0.10.4)
+  * pry-byebug (newest 3.6.0, installed 3.2.0, requested ~> 3.2.0) in groups "test, development"
+  * pry-doc (newest 0.13.3, installed 0.4.1, requested ~> 0.4) in groups "test, development"
+  * rack (newest 2.0.4, installed 1.5.5, requested ~> 1.5.2) in groups "default"
+  * rack-cache (newest 1.7.1, installed 1.6.1, requested ~> 1.6) in groups "default"
+  * rack-protection (newest 2.0.1, installed 1.5.3)
+  * rack-test (newest 0.8.3, installed 0.6.3, requested ~> 0.6) in groups "test, development"
+  * rails (newest 5.1.5, installed 4.1.16, requested ~> 4.1) in groups "default"
+  * rails-observers (newest 0.1.5, installed 0.1.2, requested ~> 0.1.2) in groups "default"
+  * railties (newest 5.1.5, installed 4.1.16)
+  * rake (newest 12.3.1, installed 11.2.2)
+  * rdoc (newest 6.0.3, installed 3.12, requested = 3.12) in groups "test, development"
+  * redcarpet (newest 3.4.0, installed 3.3.4)
+  * regexp_parser (newest 0.4.11, installed 0.3.6)
+  * request_store (newest 1.4.1, installed 1.3.2)
+  * rspec (newest 3.7.0, installed 2.99.0, requested ~> 2.99) in groups "test, development"
+  * rspec-core (newest 3.7.1, installed 2.99.2)
+  * rspec-expectations (newest 3.7.0, installed 2.99.2)
+  * rspec-its (newest 1.2.0, installed 1.0.1, requested ~> 1.0.1) in groups "test, development"
+  * rspec-mocks (newest 3.7.0, installed 2.99.4)
+  * rspec-rails (newest 3.7.2, installed 2.99.0, requested ~> 2.99) in groups "test, development"
+  * ruby-prof (newest 0.17.0, installed 0.13.1, requested ~> 0.13.0) in groups "test, development"
+  * rubyntlm (newest 0.6.2, installed 0.3.4)
+  * sass (newest 3.5.6, installed 3.4.22)
+  * sass-rails (newest 5.0.7, installed 5.0.6, requested ~> 5.0) in groups "default"
+  * savon (newest 2.12.0, installed 2.3.3)
+  * selenium-webdriver (newest 3.11.0, installed 2.53.4, requested ~> 2.53) in groups "test, development"
+  * shoulda-matchers (newest 3.1.2, installed 2.8.0, requested ~> 2.8) in groups "test, development"
+  * signet (newest 0.8.1, installed 0.7.3)
+  * simplecov (newest 0.16.1, installed 0.10.0, requested ~> 0.10.0) in groups "test"
+  * simplecov-html (newest 0.10.2, installed 0.10.0)
+  * sinatra (newest 2.0.1, installed 1.4.7, requested ~> 1.4.7) in groups "test, development"
+  * slop (newest 4.6.2, installed 3.6.0)
+  * sprockets (newest 3.7.1, installed 3.7.0)
+  * sprockets-rails (newest 3.2.1, installed 2.3.3, requested ~> 2.3.3) in groups "default"
+  * term-ansicolor (newest 1.6.0, installed 1.4.0)
+  * test-unit (newest 3.2.7, installed 3.1.9, requested ~> 3.1.3) in groups "default"
+  * therubyracer (newest 0.12.3, installed 0.12.2, requested ~> 0.12.2) in groups "default"
+  * thin (newest 1.7.2, installed 1.2.7, requested = 1.2.7) in groups "test, development"
+  * thor (newest 0.20.0, installed 0.19.1)
+  * thread_safe (newest 0.3.6, installed 0.3.5)
+  * thrift (newest 0.11.0.0, installed 0.9.3.0)
+  * tilt (newest 2.0.8, installed 2.0.5)
+  * tins (newest 1.16.3, installed 1.12.0)
+  * trackerific (newest 0.8.0, installed 0.7.5, requested ~> 0.7.5) in groups "default"
+  * tzinfo (newest 1.2.5, installed 1.2.2)
+  * uglifier (newest 4.1.8, installed 3.0.4, requested ~> 3.0.1) in groups "default"
+  * uniform_notifier (newest 1.11.0, installed 1.9.0)
+  * vcr (newest 4.0.0, installed 3.0.3, requested ~> 3.0) in groups "test"
+  * wasabi (newest 3.5.0, installed 3.2.3)
+  * websocket (newest 1.2.5, installed 1.2.4)
+  * whenever (newest 0.10.0, installed 0.9.7, requested ~> 0.9) in groups "default"
+  * wkhtmltopdf-binary-edge (newest 0.12.4.0, installed 0.12.3.0, requested = 0.12.3.0) in groups "default"
+  * xpath (newest 3.0.0, installed 0.1.4)
+  * yard (newest 0.9.12, installed 0.7.5, requested ~> 0.7.0) in groups "shamus"

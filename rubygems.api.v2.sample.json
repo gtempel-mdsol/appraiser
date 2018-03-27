@@ -1,0 +1,42 @@
+{
+  "name": "byebug",
+  "downloads": 36431454,
+  "version": "10.0.1",
+  "version_downloads": 85312,
+  "platform": "ruby",
+  "authors": "David Rodriguez, Kent Sibilev, Mark Moseley",
+  "info": "Byebug is a Ruby debugger. It's implemented using the\n    TracePoint C API for execution control and the Debug Inspector C API for\ncall stack navigation.  The core component provides support that front-ends\n    can build on. It provides breakpoint handling and bindings for stack frames\n    among other things and it comes with an easy to use command line interface.",
+  "licenses": [
+    "BSD-2-Clause"
+  ],
+  "metadata": {},
+  "sha": "49c499a6827b3f12965e49b6017a4f1a13d72822eb749958fcc8e55ab6de8467",
+  "project_uri": "https://rubygems.org/gems/byebug",
+  "gem_uri": "https://rubygems.org/gems/byebug-10.0.1.gem",
+  "homepage_uri": "http://github.com/deivid-rodriguez/byebug",
+  "wiki_uri": "",
+  "documentation_uri": "http://www.rubydoc.info/gems/byebug/10.0.1",
+  "mailing_list_uri": "",
+  "source_code_uri": "https://github.com/deivid-rodriguez/byebug",
+  "bug_tracker_uri": "https://github.com/deivid-rodriguez/byebug/issues",
+  "changelog_uri": null,
+  "dependencies": {
+    "development": [
+      {
+        "name": "bundler",
+        "requirements": "~\u003e 1.7"
+      }
+    ],
+    "runtime": []
+  },
+  "built_at": "2018-03-21T00:00:00.000Z",
+  "created_at": "2018-03-21T17:59:28.189Z",
+  "description": "Byebug is a Ruby debugger. It's implemented using the\n    TracePoint C API for execution control and the Debug Inspector C API for\n    call stack navigation.  The core component provides support that front-ends\n    can build on. It provides breakpoint handling and bindings for stack frames\n    among other things and it comes with an easy to use command line interface.",
+  "downloads_count": 85312,
+  "number": "10.0.1",
+  "summary": "Ruby fast debugger - base + CLI",
+  "rubygems_version": "\u003e= 0",
+  "ruby_version": "\u003e= 2.2.0",
+  "prerelease": false,
+  "requirements": []
+}
