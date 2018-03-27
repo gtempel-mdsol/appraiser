@@ -27,7 +27,7 @@ data.each_line do |line|
 
     if search_data.key?(:newest)
       gem_data = gem_finder.find name: search_data[:name], version: search_data[:newest]
-      message << "; " + versioner.version_info(gem_data)
+      message << "; newest " + versioner.version_info(gem_data)
     end
   else
     message = "NO INFO FOR #{line}"
