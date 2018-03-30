@@ -1,13 +1,14 @@
 
 require_relative './bundlerparser.rb'
 require_relative './gemfinder.rb'
-require_relative './rubyversioner.rb'
+require_relative './rubygems.rb'
 require_relative './bundlerfilter.rb'
+require_relative './geminfo.rb'
 
 parser = BundlerParser.new
-gem_finder = GemFinder.new
-versioner = RubyVersioner.new
+gem_finder = GemFinder.new(RubyGems.new)
 filter = BundlerFilter.new
+
 
 # you can use either of the Files to test sample bundler output
 # data = File.new('list.txt')
@@ -20,15 +21,13 @@ data = ARGF
 data.each_line do |line|
   next if filter.filter? line
   message = ''
-  search_data = parser.parse(line)
-  gem_data = gem_finder.find search_data unless search_data.nil?
-  if gem_data
-    message = "#{gem_data['name']} @ " + versioner.version_info(gem_data)
 
-    if search_data.key?(:newest)
-      gem_data = gem_finder.find name: search_data[:name], version: search_data[:newest]
-      message << "; newest " + versioner.version_info(gem_data)
-    end
+  # parse the data we need from the 
+  search_data = parser.parse(line)
+  gem_info = gem_finder.search(search_data) unless search_data.nil?
+  if gem_info && gem_info.valid?
+    message = "#{gem_info.name} " + gem_info.current_version.to_s
+    message << '; newest ' + gem_info.newest_version.to_s if gem_info.newer_version?
   else
     message = "NO INFO FOR #{line}"
   end

@@ -7,6 +7,6 @@ class BundlerFilter
   def filter?(line)
     line.nil? ||
     line.strip.empty? ||
-    @regex.match(line)
+    !@regex.match(line).nil?
   end
 end

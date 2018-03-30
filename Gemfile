@@ -8,3 +8,11 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem 'typhoeus',                   '~> 1.0'
 gem 'json',                       '~> 2.1'
+gem 'rspec',                      '~> 3.0'
+
+group :test do
+  gem 'simplecov',                '~> 0.16', require: false
+  gem "pry", "~> 0.11.3"
+  gem "pry-byebug", "~> 3.6"
+end
+
