@@ -6,7 +6,7 @@ ruby script to example 'bundle outdated' or 'bundle list' output and plumb rubyg
  and [`outdated`](http://bundler.io/v1.16/man/bundle-outdated.1.html) 
  commands, and will use that information to probe for ruby version information at [rubygems](http://rubygems.org).
 
-Usage: list
+## Usage: list
 From within your ruby project's top level directory pipe the bundler output to this script. For example:
 
 ```
@@ -35,7 +35,7 @@ american_date @ v1.0.0 requires ?
 [Rubygems](http://rubygems.org) doesn't always have ruby version information for certain gems, and in those cases you'll see a `?` question mark. Rubygems obviously won't have information for your gems that are hosted in a git repo, and for those the appraiser will tell you that it cannot find any information for those gems, echoing out the bundler information instead.
 
 
-Usage: outdated
+## Usage: outdated
 
 ```
 cd $HOME/projects/my_excellent_project
@@ -62,3 +62,15 @@ american_date @ v1.0.0 requires ?; newest v1.1.1 requires >= 0
 
 The same gem caveats apply here regarding gems that the appraiser cannot find information on.
 
+
+## Development & Test
+
+Setup:
+```
+bundle install
+```
+
+Test:
+```
+bin/spec/ --format documentation
+```
