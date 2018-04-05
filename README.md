@@ -72,5 +72,5 @@ bundle install
 
 Test:
 ```
-bin/spec/ --format documentation
+bin/spec --format documentation
 ```
