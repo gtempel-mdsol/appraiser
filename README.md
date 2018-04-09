@@ -67,7 +67,7 @@ The same gem caveats apply here regarding gems that the appraiser cannot find in
 
 Setup:
 ```
-bundle install
+bundle install --binstubs
 ```
 
 Test:
