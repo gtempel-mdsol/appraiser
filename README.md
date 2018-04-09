@@ -72,5 +72,5 @@ bundle install --binstubs
 
 Test:
 ```
-bin/spec --format documentation
+bin/rspec --format documentation
 ```
