@@ -1,3 +1,5 @@
+# Class representing the name, current, and possibly newest version information,
+# for a ruby gem.
 class GemInfo
   attr_reader :name
 
@@ -7,8 +9,8 @@ class GemInfo
   end
 
   def valid?
-    return !name.nil? && 
-      !name.empty? && 
+    !name.nil? &&
+      !name.empty? &&
       current_version?
   end
 
@@ -35,5 +37,4 @@ class GemInfo
   def newest_version
     @versions[:newest]
   end
-
 end

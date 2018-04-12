@@ -16,3 +16,6 @@ group :test do
   gem "pry-byebug", "~> 3.6"
 end
 
+
+# Added at 2018-04-11 13:37:46 -0400 by gtempel:
+gem "rubocop", "~> 0.54.0"

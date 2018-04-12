@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require './rubygems'
 
 describe RubyGems do
-
   subject(:rubygems) { RubyGems.new }
 
   let(:name) { 'my_gem_name' }
@@ -30,7 +31,7 @@ describe RubyGems do
       it 'returns parsed json object from rubygems' do
         url = rubygems.url_for name, version
         allow(Typhoeus).to receive(:get).with(url, followlocation: true).and_return(response)
-        expect(rubygems.find name, version).not_to be_nil
+        expect(rubygems.find(name, version)).not_to be_nil
       end
     end
 
@@ -41,26 +42,33 @@ describe RubyGems do
         url = rubygems.url_for name, version
         response = Typhoeus::Response.new(code: 200, body: %({"name": "#{name}", "version": "#{version}"}))
         Typhoeus.stub(url).and_return(response)
-        expect(rubygems.find name, version).not_to be_nil
+        expect(rubygems.find(name, version)).not_to be_nil
       end
     end
 
-    context 'when stubbing and the search is unsuccessful' do 
+    context 'when stubbing and the search is unsuccessful' do
       it 'returns nil' do
         url = rubygems.url_for name, version
         response = Typhoeus::Response.new(code: 404, body: 'gem not found')
         Typhoeus.stub(url).and_return(response)
-        expect(rubygems.find name, version).to be_nil
+        expect(rubygems.find(name, version)).to be_nil
       end
     end
 
-    context 'when stubbing and the search attempt fails' do 
+    context 'when stubbing and the search attempt fails' do
       it 'returns nil' do
         url = rubygems.url_for name, version
         Typhoeus.stub(url).and_return(nil)
-        expect(rubygems.find name, version).to be_nil
+        expect(rubygems.find(name, version)).to be_nil
       end
     end
 
+    context 'when there is an exception' do
+      it 'returns nil' do
+        url = rubygems.url_for name, version
+        allow(Typhoeus).to receive(:get).with(url, followlocation: true).and_raise(RuntimeError, 'something went wrong')
+        expect(rubygems.find(name, version)).to be_nil
+      end
+    end
   end
 end
