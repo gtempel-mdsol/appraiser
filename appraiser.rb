@@ -13,12 +13,12 @@ filter = BundlerFilter.new
 ruby_versioner = RubyVersioner.new
 
 # you can use either of the Files to test sample bundler output
-data = File.new('list.txt')
+# data = File.new('list.txt')
 # data = File.new('outdated.txt')
 # use ARGF when you want to pipe bundler output to this script
 # example:
 # bundle list | ruby $HOME/projects/experiments/appraiser/appraiser.rb
-# data = ARGF
+data = ARGF
 
 data.each_line do |line|
   next if filter.filter? line
