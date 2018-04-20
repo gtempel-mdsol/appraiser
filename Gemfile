@@ -19,3 +19,6 @@ end
 
 # Added at 2018-04-11 13:37:46 -0400 by gtempel:
 gem "rubocop", "~> 0.54.0"
+
+# Added at 2018-04-12 13:34:38 -0400 by gtempel:
+gem "rubocop-rspec", "~> 1.25"

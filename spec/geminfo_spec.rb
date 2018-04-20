@@ -1,17 +1,15 @@
+# frozen_string_literal: true
+
 require './geminfo'
 
 describe GemInfo do
-
   subject(:gem_info) { GemInfo.new('my_gem') }
 
   let(:current_version_number) { '1.2.3' }
   let(:newer_version_number) { '1.5.3' }
-
   let(:ruby_version_number) { '>= 1.9.3' }
-
-  let(:current_version) { double( gem: current_version_number, ruby: ruby_version_number) }
-  let(:newer_version) { double( gem: newer_version_number, ruby: ruby_version_number) }
-  
+  let(:current_version) { double(gem: current_version_number, ruby: ruby_version_number) }
+  let(:newer_version) { double(gem: newer_version_number, ruby: ruby_version_number) }
   let(:response) do
     double(
       response_body: %({"name": "#{name}", "version": "#{version}"}),
@@ -34,12 +32,12 @@ describe GemInfo do
 
     context 'when there is a name' do
       it 'returns true when there is a valid current version' do
-        gem_info.current_version = double( valid?: true)
+        gem_info.current_version = double(valid?: true)
         expect(gem_info.valid?).to be true
       end
 
       it 'returns false when there is an invalid current version' do
-        gem_info.current_version = double( valid?: false)
+        gem_info.current_version = double(valid?: false)
         expect(gem_info.valid?).to be false
       end
 
@@ -47,7 +45,6 @@ describe GemInfo do
         expect(gem_info.valid?).to be false
       end
     end
-
   end
 
   describe '#current_version' do
@@ -77,12 +74,12 @@ describe GemInfo do
 
     context 'when there is a newer version' do
       it 'returns false when the newer version is invalid' do
-        gem_info.newest_version = double( valid?: false)
+        gem_info.newest_version = double(valid?: false)
         expect(gem_info.newer_version?).to be false
       end
 
       it 'returns false when the newer version is valid' do
-        gem_info.newest_version = double( valid?: true)
+        gem_info.newest_version = double(valid?: true)
         expect(gem_info.newer_version?).to be true
       end
 
@@ -90,8 +87,6 @@ describe GemInfo do
         gem_info.newest_version = nil
         expect(gem_info.newer_version?).to be false
       end
-
     end
   end
-
 end

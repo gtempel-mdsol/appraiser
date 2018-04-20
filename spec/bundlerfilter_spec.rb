@@ -1,9 +1,8 @@
+# frozen_string_literal: true
+
 require './bundlerfilter'
-
 describe BundlerFilter do
-
   subject(:filter) { BundlerFilter.new }
-
 
   describe '#filter?' do
     it 'returns true if input is nil' do
@@ -29,7 +28,5 @@ describe BundlerFilter do
       results = filter.filter? line
       expect(results).to be false
     end
-
   end
-
 end

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require './gemversion'
 
 describe GemVersion do
-
   let(:gem_version_number) { '1.2.3' }
   let(:ruby_version_number) { '>= 2.2.2' }
 
@@ -57,5 +58,4 @@ describe GemVersion do
       end
     end
   end
-  
 end
