@@ -3,7 +3,7 @@
 require './gem_finder'
 
 describe GemFinder do
-  let(:rubygems) { double }
+  let(:rubygems) { instance_double(RubyGems) }
   let(:name) { 'my_gem_name' }
   let(:version) { '1.2.3' }
   let(:ruby_version) { '>=1.9.3' }

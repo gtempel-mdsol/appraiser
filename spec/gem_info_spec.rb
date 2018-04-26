@@ -8,8 +8,8 @@ describe GemInfo do
   let(:current_version_number) { '1.2.3' }
   let(:newer_version_number) { '1.5.3' }
   let(:ruby_version_number) { '>= 1.9.3' }
-  let(:current_version) { double(gem: current_version_number, ruby: ruby_version_number) }
-  let(:newer_version) { double(gem: newer_version_number, ruby: ruby_version_number) }
+  let(:current_version) { instance_double(GemVersion, gem: current_version_number, ruby: ruby_version_number) }
+  let(:newer_version) { instance_double(GemVersion, gem: newer_version_number, ruby: ruby_version_number) }
   let(:response) do
     double(
       response_body: %({"name": "#{name}", "version": "#{version}"}),
@@ -32,12 +32,12 @@ describe GemInfo do
 
     context 'when there is a name' do
       it 'returns true when there is a valid current version' do
-        gem_info.current_version = double(valid?: true)
+        gem_info.current_version = instance_double(GemVersion, valid?: true)
         expect(gem_info.valid?).to be true
       end
 
       it 'returns false when there is an invalid current version' do
-        gem_info.current_version = double(valid?: false)
+        gem_info.current_version = instance_double(GemVersion, valid?: false)
         expect(gem_info.valid?).to be false
       end
 
@@ -74,12 +74,12 @@ describe GemInfo do
 
     context 'when there is a newer version' do
       it 'returns false when the newer version is invalid' do
-        gem_info.newest_version = double(valid?: false)
+        gem_info.newest_version = instance_double(GemVersion, valid?: false)
         expect(gem_info.newer_version?).to be false
       end
 
       it 'returns false when the newer version is valid' do
-        gem_info.newest_version = double(valid?: true)
+        gem_info.newest_version = instance_double(GemVersion, valid?: true)
         expect(gem_info.newer_version?).to be true
       end
 
