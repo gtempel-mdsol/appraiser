@@ -11,22 +11,30 @@ describe BundlerParser do
 
   describe '#parse' do
     context 'when bundler list data is provided' do
+      it 'returns a hash' do
+        bundler_record = "  * #{name} (#{version})"
+        results = parser.parse bundler_record
+        expect(results).to be_a_kind_of(Hash)
+      end
+
       it 'returns a non-empty hash' do
         bundler_record = "  * #{name} (#{version})"
         results = parser.parse bundler_record
-        expect(results).not_to be_nil
-        expect(results).to be_a_kind_of(Hash)
-        expect(results).not_to be_empty
+        expect(results).not_to eq({})
       end
     end
 
     context 'when bundler outdated data is provided' do
+      it 'returns a hash' do
+        bundler_record = "  * #{name} (newest #{newest_version}, installed #{version})"
+        results = parser.parse bundler_record
+        expect(results).to be_a_kind_of(Hash)
+      end
+
       it 'returns a non-empty hash' do
         bundler_record = "  * #{name} (newest #{newest_version}, installed #{version})"
         results = parser.parse bundler_record
-        expect(results).not_to be_nil
-        expect(results).to be_a_kind_of(Hash)
-        expect(results).not_to be_empty
+        expect(results).not_to eq({})
       end
     end
 

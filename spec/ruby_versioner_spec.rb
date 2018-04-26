@@ -3,7 +3,6 @@
 require './ruby_versioner'
 
 describe RubyVersioner do
-
   let(:gem_name) { 'my_gem' }
   let(:current_version_number) { '1.2.3' }
   let(:newer_version_number) { '1.5.3' }
@@ -15,9 +14,7 @@ describe RubyVersioner do
   subject(:ruby_versioner) { described_class.new }
 
   describe '#<<' do
-
     context 'when the gem info is valid' do
-
       context 'when the gem info has only a current version' do
         let(:gem_info) { instance_double(GemInfo, name: gem_name, current_version: current_version, newer_version?: false, valid?: true) }
 
@@ -35,11 +32,11 @@ describe RubyVersioner do
       context 'when the gem info has different current and newest version ruby requirements' do
         let(:gem_info) do
           instance_double(GemInfo,
-            name: gem_name, 
-            current_version: current_version, 
-            newer_version?: true, 
-            newest_version: newer_version, 
-            valid?: true)
+                          name: gem_name,
+                          current_version: current_version,
+                          newer_version?: true,
+                          newest_version: newer_version,
+                          valid?: true)
         end
 
         it 'adds the gem current and newest ruby versions to the collection' do
@@ -51,6 +48,7 @@ describe RubyVersioner do
 
     context 'when the gem info is invalid' do
       let(:gem_info) { instance_double(GemInfo, name: gem_name, valid?: false) }
+
       it 'does not add the gem info to the collection' do
         ruby_versioner << gem_info
         expect(ruby_versioner.ruby_versions).to be_empty
@@ -59,22 +57,31 @@ describe RubyVersioner do
   end
 
   describe '#ruby_versions' do
-
     context 'when gem info has a single ruby version' do
-      let(:gem_info) { instance_double(GemInfo, name: gem_name, current_version: current_version, newer_version?: false, valid?: true) }
+      let(:gem_info) do
+        instance_double(GemInfo,
+                        name: gem_name,
+                        current_version: current_version,
+                        newer_version?: false,
+                        valid?: true)
+      end
+
       it 'adds a single ruby version to the collection' do
-          ruby_versioner << gem_info
-          expect(ruby_versioner.ruby_versions).to match_array([ruby1_version_number])
+        ruby_versioner << gem_info
+        expect(ruby_versioner.ruby_versions).to match_array([ruby1_version_number])
       end
     end
 
     context 'when gem info has multiple ruby versions' do
-      let(:gem_info) { instance_double(GemInfo, 
-        name: gem_name, 
-        current_version: current_version, 
-        newer_version?: true, 
-        newest_version: newer_version, 
-        valid?: true) }
+      let(:gem_info) do
+        instance_double(GemInfo,
+                        name: gem_name,
+                        current_version: current_version,
+                        newer_version?: true,
+                        newest_version: newer_version,
+                        valid?: true)
+      end
+
       it 'adds a each ruby version to the collection' do
         ruby_versioner << gem_info
         expect(ruby_versioner.ruby_versions).to match_array([ruby1_version_number, ruby2_version_number])
@@ -82,13 +89,15 @@ describe RubyVersioner do
     end
 
     context 'when gem info has duplicate ruby versions' do
-      let(:gem_info) { instance_double(
-        GemInfo,
-        name: gem_name, 
-        current_version: current_version, 
-        newer_version?: true, 
-        newest_version: current_version, 
-        valid?: true) }
+      let(:gem_info) do
+        instance_double(GemInfo,
+                        name: gem_name,
+                        current_version: current_version,
+                        newer_version?: true,
+                        newest_version: current_version,
+                        valid?: true)
+      end
+
       it 'adds a single ruby version to the collection' do
         ruby_versioner << gem_info
         expect(ruby_versioner.ruby_versions).to match_array([ruby1_version_number])
@@ -96,15 +105,20 @@ describe RubyVersioner do
     end
   end
 
-
   describe '#ruby_version' do
     context 'when gem info has a ruby version' do
-      let(:gem_info) { instance_double(GemInfo, name: gem_name, current_version: current_version, newer_version?: false, valid?: true) }
+      let(:gem_info) do
+        instance_double(GemInfo,
+                        name: gem_name,
+                        current_version: current_version,
+                        newer_version?: false,
+                        valid?: true)
+      end
+
       it 'adds the gem name and version to the list for the ruby version' do
         ruby_versioner << gem_info
         expect(ruby_versioner.ruby_version(ruby1_version_number)).not_to be_empty
       end
     end
   end
-
 end

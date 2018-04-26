@@ -12,8 +12,7 @@ describe RubyGems do
     context 'when given a gem name and version' do
       it 'returns a URL string' do
         url = rubygems.url_for name, version
-        expect(url).to include(name)
-        expect(url).to include(version)
+        expect(url).to include(name, version)
       end
     end
   end
@@ -28,6 +27,7 @@ describe RubyGems do
           success?: true
         )
       end
+
       it 'returns parsed json object from rubygems' do
         url = rubygems.url_for name, version
         allow(Typhoeus).to receive(:get).with(url, followlocation: true).and_return(response)

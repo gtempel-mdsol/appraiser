@@ -8,8 +8,19 @@ describe GemInfo do
   let(:current_version_number) { '1.2.3' }
   let(:newer_version_number) { '1.5.3' }
   let(:ruby_version_number) { '>= 1.9.3' }
-  let(:current_version) { instance_double(GemVersion, gem: current_version_number, ruby: ruby_version_number) }
-  let(:newer_version) { instance_double(GemVersion, gem: newer_version_number, ruby: ruby_version_number) }
+  let(:current_version) do
+    instance_double(
+      GemVersion,
+      gem: current_version_number,
+      ruby: ruby_version_number
+      )
+  end
+  let(:newer_version) do
+    instance_double(
+      GemVersion,
+      gem: newer_version_number,
+      ruby: ruby_version_number)
+  end
   let(:response) do
     double(
       response_body: %({"name": "#{name}", "version": "#{version}"}),
