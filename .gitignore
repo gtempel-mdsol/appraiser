@@ -1,1 +1,4 @@
 coverage
+bin
+.bundle
+.DS_Store
