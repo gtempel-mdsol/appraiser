@@ -3,6 +3,8 @@
 require './gem_finder'
 
 describe GemFinder do
+  subject(:gem_finder) { described_class.new(rubygems) }
+
   let(:rubygems) { instance_double(RubyGems) }
   let(:name) { 'my_gem_name' }
   let(:version) { '1.2.3' }
@@ -10,8 +12,6 @@ describe GemFinder do
 
   let(:newest_version) { '1.3.5' }
   let(:newest_ruby_version) { '>=2.2.2' }
-
-  subject(:gem_finder) { described_class.new(rubygems) }
 
   describe '#search' do
     context 'when search data describes single gem version' do

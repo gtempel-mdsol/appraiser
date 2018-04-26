@@ -5,6 +5,8 @@ require './gem_info'
 require './gem_version'
 
 describe RubyVersioner do
+  subject(:ruby_versioner) { described_class.new }
+
   let(:gem_name) { 'my_gem' }
   let(:current_version_number) { '1.2.3' }
   let(:newer_version_number) { '1.5.3' }
@@ -12,8 +14,6 @@ describe RubyVersioner do
   let(:ruby2_version_number) { '>= 2.2.2' }
   let(:current_version) { instance_double(GemVersion, gem: current_version_number, ruby: ruby1_version_number) }
   let(:newer_version) { instance_double(GemVersion, gem: newer_version_number, ruby: ruby2_version_number) }
-
-  subject(:ruby_versioner) { described_class.new }
 
   describe '#<<' do
     context 'when the gem info is valid' do

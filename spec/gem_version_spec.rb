@@ -3,10 +3,10 @@
 require './gem_version'
 
 describe GemVersion do
+  subject(:gem_version) { described_class.new(gem_version_number, ruby_version_number) }
+
   let(:gem_version_number) { '1.2.3' }
   let(:ruby_version_number) { '>= 2.2.2' }
-
-  subject(:gem_version) { described_class.new(gem_version_number, ruby_version_number) }
 
   describe '#gem' do
     it 'returns the gem version' do
