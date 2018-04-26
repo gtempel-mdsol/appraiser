@@ -16,7 +16,13 @@ describe RubyVersioner do
   describe '#<<' do
     context 'when the gem info is valid' do
       context 'when the gem info has only a current version' do
-        let(:gem_info) { instance_double(GemInfo, name: gem_name, current_version: current_version, newer_version?: false, valid?: true) }
+        let(:gem_info) do
+          instance_double(GemInfo,
+                          name: gem_name,
+                          current_version: current_version,
+                          newer_version?: false,
+                          valid?: true)
+        end
 
         it 'adds the gem current ruby version to the collection' do
           ruby_versioner << gem_info
