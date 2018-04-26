@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require './gem_info'
+require './gem_info'
+require './gem_version'
 
 describe GemInfo do
   subject(:gem_info) { described_class.new('my_gem') }

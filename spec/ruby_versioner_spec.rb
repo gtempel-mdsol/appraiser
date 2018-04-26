@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require './ruby_versioner'
+require './gem_info'
+require './gem_version'
 
 describe RubyVersioner do
   let(:gem_name) { 'my_gem' }
