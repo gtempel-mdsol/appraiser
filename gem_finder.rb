@@ -12,27 +12,28 @@ class GemFinder
     @rubygems = rubygems
   end
 
-  def search(search_data)
-    gem_info = GemInfo.new search_data[:name]
-    rubygems_data = rubygems.find search_data[:name], search_data[:version]
-    gem_info.current_version = GemVersion.new(search_data[:version],
-                                              detect_ruby_version(rubygems_data))
+  def detect_ruby_version(rubygems_data = {})
+    default_version = '?'
+    version = rubygems_data&.key?(:ruby_version) ? rubygems_data[:ruby_version] : default_version
+    version.nil? || version.empty? ? '?' : version
+  end
+
+  def search(search_data = {})
+    gem_info = GemInfo.new(search_data[:name])
+    gem_info.current_version = do_search(name: search_data[:name], version: search_data[:version])
 
     # is there a newest version?
     if search_data.key?(:newest)
-      rubygems_data = rubygems.find search_data[:name], search_data[:newest]
-      gem_info.newest_version = GemVersion.new(search_data[:newest],
-                                               detect_ruby_version(rubygems_data))
+      gem_info.newest_version = do_search(name: search_data[:name], version: search_data[:newest])
     end
     gem_info
   end
 
-  def detect_ruby_version(rubygems_data)
-    default_version = '?'
-    version = default_version
-    if rubygems_data && rubygems_data.key?(:ruby_version)
-      version = rubygems_data[:ruby_version]
-    end
-    version.nil? || version.empty? ? '?' : version
+  private
+
+  def do_search(name:, version:)
+    rubygems_data = rubygems.find name, version
+    version_info = GemVersion.new(version, detect_ruby_version(rubygems_data))
+    version_info
   end
 end

@@ -14,38 +14,44 @@ describe GemFinder do
   subject(:gem_finder) { described_class.new(rubygems) }
 
   describe '#search' do
-    context 'when search data describes a gem' do
-      it 'returns a GemInfo object with version and ruby version info' do
-        expect(rubygems).to receive(:find).once.ordered.with(name, version).and_return(name: name, version: version, ruby_version: ruby_version)
+    context 'when search data describes single gem version' do
+      let(:search_data) { { name: name, version: version } }
 
-        search_data = {
-          name: name,
-          version: version
-        }
-        gem_finder = described_class.new(rubygems)
+      before do
+        allow(rubygems).to receive(:find).once.ordered.with(name, version).and_return(name: name, version: version, ruby_version: ruby_version)
+      end
+
+      it 'returns a GemInfo object with the gem version' do
         gem_info = gem_finder.search search_data
-        expect(gem_info).not_to be_nil
-        expect(gem_info.current_version).not_to be_nil
         expect(gem_info.current_version.gem).to eq(version)
+      end
+
+      it 'returns a GemInfo object with the gem ruby version' do
+        gem_info = gem_finder.search search_data
         expect(gem_info.current_version.ruby).to eq(ruby_version)
+      end
+
+      it 'returns a GemInfo object with no newest-version info' do
+        gem_info = gem_finder.search search_data
         expect(gem_info.newest_version).to be_nil
       end
     end
 
     context 'when search data describes an outdated gem' do
-      it 'returns a GemInfo object with current and newest version and ruby version info' do
-        expect(rubygems).to receive(:find).once.ordered.with(name, version).and_return(name: name, version: version, ruby_version: ruby_version)
-        expect(rubygems).to receive(:find).once.ordered.with(name, newest_version).and_return(name: name, version: newest_version, ruby_version: newest_ruby_version)
+      let(:search_data) { { name: name, version: version, newest: newest_version } }
 
-        search_data = {
-          name: name,
-          version: version,
-          newest: newest_version
-        }
-        gem_finder = described_class.new(rubygems)
+      before do
+        allow(rubygems).to receive(:find).once.ordered.with(name, version).and_return(name: name, version: version, ruby_version: ruby_version)
+        allow(rubygems).to receive(:find).once.ordered.with(name, newest_version).and_return(name: name, version: newest_version, ruby_version: newest_ruby_version)
+      end
+
+      it 'returns a GemInfo object with newest version' do
         gem_info = gem_finder.search search_data
-        expect(gem_info).not_to be_nil
         expect(gem_info.newest_version.gem).to eq(newest_version)
+      end
+
+      it 'returns a GemInfo object with newest gem ruby version info' do
+        gem_info = gem_finder.search search_data
         expect(gem_info.newest_version.ruby).to eq(newest_ruby_version)
       end
     end
