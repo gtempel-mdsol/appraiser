@@ -20,7 +20,6 @@ class GemVersion
   end
 
   def valid?
-    !(gem.nil? || gem.empty?) &&
-    !(ruby.nil? || ruby.empty?)
+    !(gem.nil? || gem.empty?) && !(ruby.nil? || ruby.empty?)
   end
 end

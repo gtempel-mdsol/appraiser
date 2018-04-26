@@ -27,11 +27,8 @@ data.each_line do |line|
   search_data = parser.parse(line)
   gem_info = gem_finder.search(search_data) unless search_data.nil?
   if gem_info&.valid?
-  # if gem_info && gem_info.valid?
     message = "#{gem_info.name} " + gem_info.current_version.to_s
-    if gem_info.newer_version?
-      message << '; newest ' + gem_info.newest_version.to_s
-    end
+    message << '; newest ' + gem_info.newest_version.to_s if gem_info.newer_version?
     ruby_versioner << gem_info
   else
     message = "NO INFO FOR #{line}"

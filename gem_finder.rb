@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './gem_info'
 require_relative './gem_version'
 require_relative './ruby_gems'
@@ -8,22 +10,22 @@ require_relative './ruby_gems'
 class GemFinder
   attr_reader :rubygems
 
+  DEFAULT_RUBY_VERSION = '?'
+
   def initialize(rubygems)
     @rubygems = rubygems
   end
 
   def detect_ruby_version(rubygems_data = {})
-    default_version = '?'
-    version = rubygems_data&.key?(:ruby_version) ? rubygems_data[:ruby_version] : default_version
-    version.nil? || version.empty? ? '?' : version
+    version = rubygems_data&.key?(:ruby_version) ? rubygems_data[:ruby_version] : DEFAULT_RUBY_VERSION
+    version.nil? || version.empty? ? DEFAULT_RUBY_VERSION : version
   end
 
   def search(search_data = {})
     gem_info = GemInfo.new(search_data[:name])
     gem_info.current_version = do_search(name: search_data[:name], version: search_data[:version])
 
-    # is there a newest version?
-    if search_data.key?(:newest)
+    if search_data&.key?(:newest)
       gem_info.newest_version = do_search(name: search_data[:name], version: search_data[:newest])
     end
     gem_info
