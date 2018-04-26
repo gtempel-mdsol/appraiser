@@ -18,7 +18,7 @@ describe GemFinder do
       let(:search_data) { { name: name, version: version } }
 
       before do
-        allow(rubygems).to receive(:find).once.ordered.with(name, version).and_return(name: name, version: version, ruby_version: ruby_version)
+        allow(rubygems).to receive(:find).once.with(name, version).and_return(name: name, version: version, ruby_version: ruby_version)
       end
 
       it 'returns a GemInfo object with the gem version' do
@@ -41,8 +41,8 @@ describe GemFinder do
       let(:search_data) { { name: name, version: version, newest: newest_version } }
 
       before do
-        allow(rubygems).to receive(:find).once.ordered.with(name, version).and_return(name: name, version: version, ruby_version: ruby_version)
-        allow(rubygems).to receive(:find).once.ordered.with(name, newest_version).and_return(name: name, version: newest_version, ruby_version: newest_ruby_version)
+        allow(rubygems).to receive(:find).once.with(name, version).and_return(name: name, version: version, ruby_version: ruby_version)
+        allow(rubygems).to receive(:find).once.with(name, newest_version).and_return(name: name, version: newest_version, ruby_version: newest_ruby_version)
       end
 
       it 'returns a GemInfo object with newest version' do
