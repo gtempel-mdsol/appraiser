@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative './bundlerparser.rb'
-require_relative './gemfinder.rb'
-require_relative './rubygems.rb'
-require_relative './bundlerfilter.rb'
-require_relative './geminfo.rb'
-require_relative './rubyversioner.rb'
+require_relative './bundler_parser.rb'
+require_relative './gem_finder.rb'
+require_relative './ruby_gems.rb'
+require_relative './bundler_filter.rb'
+require_relative './gem_info.rb'
+require_relative './ruby_versioner.rb'
 
 parser = BundlerParser.new
 gem_finder = GemFinder.new(RubyGems.new)
