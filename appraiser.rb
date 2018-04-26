@@ -39,7 +39,12 @@ data.each_line do |line|
   puts message
 end
 
-ruby_versioner.ruby_versions.sort.each do |version|
-  puts "ruby version #{version}: #{ruby_versioner.ruby_version(version)}"
+unless ruby_versioner.ruby_versions.empty?
+  puts
+  puts 'Breakdown of gems by required ruby version:'
+  puts
+  ruby_versioner.ruby_versions.sort.each do |version|
+    puts "ruby version #{version}:\n#{ruby_versioner.ruby_version(version)}"
+    puts
+  end
 end
- 

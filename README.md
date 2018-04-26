@@ -1,5 +1,5 @@
 # appraiser
-ruby script to example 'bundle outdated' or 'bundle list' output and plumb rubygems to determine the appropriate ruby version(s)
+ruby script to example 'bundle outdated' or 'bundle list' output and plumb [rubygems](http://rubygems.org) to determine the appropriate ruby version(s)
 
 
 [Bundler](http://bundler.io/) provides a great way to manage and update your ruby project's gems, but what if you want to know what ruby version is supported by your current set of gems? That's where appraiser comes in. It's smart enough to understand the output of bundler's [`list`](http://bundler.io/v1.16/man/bundle-list.1.html)
